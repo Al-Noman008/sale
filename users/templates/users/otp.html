@@ -4,18 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
-    <title>Home</title>
+    <title>Otp Verfication</title>
 </head>
 <body>
-    <h1>Welcome</h1>
-
-    <h2>{{request.user.username}}</h2>
-
-    <hr>
-     <a href="{% url 'update' %}">Update Profile</a>
-
-    <p >
-        <a href="{% url 'logout' %}">Logout</a>
-    </p>
+    <h2>Enter OTP HERE</h2>
+    <form method="post">
+        {% csrf_token %} {{form.as_p}} 
+        <button type="submit">Verify</button></form>
 </body>
 </html>
